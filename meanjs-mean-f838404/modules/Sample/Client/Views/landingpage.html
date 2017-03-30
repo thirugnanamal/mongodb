@@ -1,0 +1,68 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type="text/javascript" src="../Controller/Sample.client.controller.js"></script>
+
+	<style>
+		label{
+			padding-right: 205px;
+			padding-left:5px;
+			text-align:left; 
+		}
+		.editdelete{
+			float :right;
+		}
+		body{
+			background-color : #E6FAFA;
+		}
+		.th{
+ height: 506px;
+    width: 904px;
+    margin-left: 30px;
+    margin-top: 10px;
+    background-color : #FFE1CE;
+		}
+		th1{
+			background-color:#000000;
+		}
+	</style>
+</head>
+<body ng-app = 'SampleApp' ng-controller = 'TestControl'>
+	<div class="jumbotron th1">
+		<button id="save"  type="submit" style="margin-bottom:40px;" class="editdelete btn btn-warning col-xs-2">EDIT MY PROFILE</button>
+		<button id="save" type="submit" style="margin-bottom:20px;" class="editdelete btn btn-danger col-xs-2">DELETE MY PROFILE</button>
+	</div>
+	<div class="jumbotron th">
+	<form id="form1" class="form-horizontal" role="form">
+		<div class="row" id="integer">
+			<div class="form-group">
+				<label for="firstname"> First Name:</label>
+				<input class="form-control" type="text" id="emp_fname"   style="padding-left: 39px;" name="fname"  disabled />
+			</div>
+			<div class="form-group">			
+				<label for="lastname">Last Name:</label>
+				<input class="form-control" type="text" id="emp_lname"  style="padding-left: 39px;" name="lname" disabled />
+			</div>
+			
+			<div class="form-group">
+				<label for="Email"> Email ID:</label>
+				<input class="form-control" type="email" id="emp_email"  style="padding-left: 39px;" name="email"  disabled />
+			</div>
+
+			<div class="form-group">
+				<label for="password"> Password:</label>
+				<input class="form-control" type="password" id="emp_password"  style="padding-left: 39px;" name="password"  disabled />
+			</div>
+
+			<div class="form-group">
+				<label for="phone">Contact:</label>
+				<input class="form-control" type="text" id="emp_phone" name="phone" disabled />
+			</div>
+			<div>
+					<button id="save" type="submit" ng-click = "submitDetails(UserDetails)" style="padding-left:4px;margin-left: 190px;margin-top: 10px;"class="btn btn-success col-xs-3">Save</button>
+				</div>
+			</div>
+		</body>
+		</html>
