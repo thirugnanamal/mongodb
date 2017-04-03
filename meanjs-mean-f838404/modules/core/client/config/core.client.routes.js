@@ -29,7 +29,7 @@
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: '/modules/Sample/Client/Views/register.html',
+        templateUrl: '/modules/Sample/Client/Views/login.html',
         controller: 'TestControl'
       })
       .state('not-found', {

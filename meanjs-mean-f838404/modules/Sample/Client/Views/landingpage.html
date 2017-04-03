@@ -8,61 +8,47 @@
 	<style>
 		label{
 			padding-right: 205px;
-			padding-left:5px;
+			padding-left:36px;
 			text-align:left; 
 		}
 		.editdelete{
 			float :right;
 		}
-		body{
-			background-color : #E6FAFA;
-		}
-		.th{
- height: 506px;
-    width: 904px;
-    margin-left: 30px;
-    margin-top: 10px;
-    background-color : #FFE1CE;
-		}
-		th1{
-			background-color:#000000;
-		}
 	</style>
 </head>
-<body ng-app = 'SampleApp' ng-controller = 'TestControl'>
-	<div class="jumbotron th1">
-		<button id="save"  type="submit" style="margin-bottom:40px;" class="editdelete btn btn-warning col-xs-2">EDIT MY PROFILE</button>
-		<button id="save" type="submit" style="margin-bottom:20px;" class="editdelete btn btn-danger col-xs-2">DELETE MY PROFILE</button>
+<body>
+	<div class="page-header" id="ADD">
+
 	</div>
-	<div class="jumbotron th">
+	<div class="jumbotron">
+		<button id="save"  type="submit" class="editdelete btn btn-warning col-xs-2" ng-click = "updateClick()">EDIT MY PROFILE</button>
+		<button id="save" type="submit" class="editdelete btn btn-danger col-xs-2" ng-click = "deleteDetails()">DELETE MY PROFILE</button>
+		<button id="save" type="submit" class="editdelete btn btn-danger col-xs-2" ng-click = "upDateDetails()">SUBMIT</button>
+	</div>
 	<form id="form1" class="form-horizontal" role="form">
 		<div class="row" id="integer">
 			<div class="form-group">
 				<label for="firstname"> First Name:</label>
-				<input class="form-control" type="text" id="emp_fname"   style="padding-left: 39px;" name="fname"  disabled />
+				<input class="form-control" type="text" id="emp_fname"  ng-model="LoogedUserDetail.User_FirstName" style="padding-left: 39px;" name="fname"  ng-readonly = "updateField" />
 			</div>
 			<div class="form-group">			
 				<label for="lastname">Last Name:</label>
-				<input class="form-control" type="text" id="emp_lname"  style="padding-left: 39px;" name="lname" disabled />
+				<input class="form-control" type="text" id="emp_lname" ng-model = "LoogedUserDetail.User_LastName" style="padding-left: 39px;" name="lname" ng-readonly = "updateField" />
 			</div>
 			
 			<div class="form-group">
 				<label for="Email"> Email ID:</label>
-				<input class="form-control" type="email" id="emp_email"  style="padding-left: 39px;" name="email"  disabled />
+				<input class="form-control" type="email" id="emp_email" ng-model = "LoogedUserDetail.User_Mailid" style="padding-left: 39px;" name="email"  disabled />
 			</div>
 
 			<div class="form-group">
 				<label for="password"> Password:</label>
-				<input class="form-control" type="password" id="emp_password"  style="padding-left: 39px;" name="password"  disabled />
+				<input class="form-control" type="password" id="emp_password" ng-model = "LoogedUserDetail.User_Password" style="padding-left: 39px;" name="password"  ng-readonly = "updateField" />
 			</div>
 
 			<div class="form-group">
 				<label for="phone">Contact:</label>
-				<input class="form-control" type="text" id="emp_phone" name="phone" disabled />
-			</div>
-			<div>
-					<button id="save" type="submit" ng-click = "submitDetails(UserDetails)" style="padding-left:4px;margin-left: 190px;margin-top: 10px;"class="btn btn-success col-xs-3">Save</button>
-				</div>
+				<input class="form-control" type="text" id="emp_phone" ng-model = "LoogedUserDetail.User_Number" name="phone" ng-readonly = "updateField" />
 			</div>
 		</body>
 		</html>

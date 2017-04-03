@@ -7,6 +7,6 @@ module.exports = function (app) {
   // Setting up the users profile api
   app.route('/api/Register').post(users.Register);
   app.route('/api/Login').post(users.Login);
-  app.route('/api/Delete').put(users.DeleteDetails);
-  app.route('/api/upDateDetails').put(users.UpdateDetails);
+  app.route('/api/Delete').post(users.DeleteDetails);
+  app.route('/api/Update').post(users.UpdateDetails);
 };

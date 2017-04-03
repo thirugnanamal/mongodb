@@ -1,29 +1,30 @@
+(function () {
+  'use strict';
 
-'use strict';
+  angular
+  .module('SampleApp')
+  .config(routeConfig);
 
-// Setting up route
+  routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
+  function routeConfig($stateProvider, $urlRouterProvider) {
 
-angular
-.module('SampleApp')
-.config(SamplrouteConfig);
-
-SamplrouteConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
-
-function SamplrouteConfig($stateProvider, $urlRouterProvider) {
-
-  $stateProvider
-  .state('SampleApp.login', {
-    url:'/securitySettings',
-    templateUrl:'modules/Sample/Client/Views/login.html',
-    controller:'TestControl'
-  })
-  .state('RegisterUser', {
-    url:'/securitySettings',
-    templateUrl:'modules/Sample/Client/Views/register.html',
-    data: {roles:['admin']},
-    controller:'TestControl'
-  });
-
-
-}
+    $stateProvider
+    .state('reg',{
+      url:'/Register',
+      templateUrl:'modules/Sample/Client/Views/register.html',
+      data: {roles:['admin']},
+      controller:'TestControl'
+    })
+    .state('LandingPage',{
+      url:'/UserDetails',
+      templateUrl:'modules/Sample/Client/Views/landingpage.html',
+      params: {
+       obj: null
+     },
+     data: {roles:['admin']},
+     controller:'LandingPageControl'
+   });
+    
+  }
+}());
